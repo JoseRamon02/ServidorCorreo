@@ -1,3 +1,6 @@
+#alias
+alias_maps = hash:/etc/aliases
+
 #reenvio de correos
 relay_domains = gmail.com
 
@@ -20,7 +23,7 @@ myorigin = /etc/mailname
 
 #Directiva de destino del correo
 # See /usr/share/postfix/main.cf.dist for a commented, more complete version
-mydestination = $myhostname, jrt.hopto.org, ip-10-0-0-185.ec2.internal, localhost.ec2.internal, localhost, ec2-100-25-14-5.compute-1.amazonaws.com
+mydestination = $myhostname, jrt.hopto.org, ip-10-0-0-185.ec2.internal, localhost.ec2.internal, localhost, ec2-34-232-66-154.compute-1.amazonaws.com
 
 
 # Debian specific:  Specifying a file name will cause the first
@@ -54,7 +57,6 @@ smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
 
 smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated defer_unauth_destination
 myhostname = ip-10-0-0-185.ec2.internal
-alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
 
 mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
